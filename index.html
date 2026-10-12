@@ -7,6 +7,11 @@
     <!-- Google Fonts for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/script.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,28 +36,37 @@
     </div>
 
     <!-- Main Navigation Bar -->
-    <nav class="navbar">
+   <nav class="navbar">
+  <!-- Logo -->
+  <a href="index.html" class="logo">
+    <img src="images/website_logo.svg" alt="logo" width="80">
+  </a>
 
-            <!-- Using stylized text/placeholder for logo graphic matching image -->
-           <a href="index.html"><img src="images/website_logo.svg" alt="logo" width="60px"></a>
+  <!-- Hamburger (mobile only) -->
+  <button class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 
-    
+  <!-- Dark overlay -->
+  <div class="nav-overlay" id="nav-overlay"></div>
 
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+  <!-- Sidebar / Nav links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="about-us.html">About Us</a></li>
+    <li><a href="website-development-services.html">Website Development</a></li>
+    <li><a href="#">WordPress Development</a></li>
+    <li><a href="#">E-Commerce Development</a></li>
+    <li><a href="#">SEO</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Our Products</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
 
-        <ul class="nav-links" id="nav-links">
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="website-development-services.html">Website Development</a></li>
-            <li><a href="#">WordPress Development</a></li>
-            <li><a href="#">E-Commerce Development</a></li>
-            <li><a href="#">SEO</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Our Products</a></li>
-            <li><a href="#">Contact US</a></li>
-        </ul>
-    </nav>
+  <!-- Close button (mobile only, shown when panel is open) -->
+  <button class="close-menu" id="close-menu" aria-label="Close menu">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -60,7 +74,8 @@
         <div class="hero-title-wrapper">
             <!-- Left Hand Graphic Simulation -->
             <img src="images/left-hand.svg" alt="Human Hand" width="100%" class="hand-left" style="border-radius: 50% 0 0 50%; opacity: 0.85; object-fit: cover; ">
-            
+            <span class="yearBox">12+ Years | 16K+ Global Clients
+</span>
             <h1 class="hero-title">
                 <span class="red-text">Providing</span> <span class="light-red">Solutions for</span> 
             </h1>
@@ -72,12 +87,21 @@
         <h2 class="hero-subtitle">Web Development</h2>
 
         <!-- Action Elements -->
-        <div class="hero-actions">
-            <a href="#" class="lets-connect-btn">
+ 
+        <div class="hero-actions ">
+            <!-- <a href="#" class="lets-connect-btn">
                 <span>Lets Connect</span>
                 <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            </a> -->
 
+            <div class="cta-wrapper">
+     <a href="#banner_form" class="theme-btn" aria-label="Claim Your Free Marketing Strategy" title="Get a Free AI Powered Marketing Strategy">
+                  <div class="arrow-circle" aria-hidden="true">
+                     <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                  </div>
+                  <span class="btn-text">Lets Connect</span>
+               </a>
+               </div>
             <div class="ai-badge">
                 <div class="check-icon"><i class="fa-solid fa-check"></i></div>
                 <span>AI-Powered Results</span>
@@ -99,7 +123,7 @@
     </section>
 
     <!-- Bottom Services Section -->
-    <div class="services-container">
+    <!-- <div class="services-container">
         <div class="service-card">
             <div class="service-icon-circle">
                 <i class="fa-solid fa-check"></i>
@@ -120,16 +144,103 @@
             </div>
             <h3 class="service-title">Digital Marketing</h3>
         </div>
+    </div> -->
+<div class="cards-container">
+  <!-- Card 1 -->
+  <div class="feature-card"  data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+    <div class="glow-bg yellow-glow"></div>
+    <div class="icon-box yellow-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
     </div>
+    <div class="card-content">
+      <span class="card-subtitle">BOOSTING REVENUE</span>
+      <h3 class="card-title yellow-text">2X to 6X</h3>
+      <p class="card-desc">Proven growth results</p>
+    </div>
+  </div>
 
+  <!-- Card 2 -->
+  <div class="feature-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+    <div class="glow-bg blue-glow"></div>
+    <div class="icon-box blue-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+    </div>
+    <div class="card-content">
+      <span class="card-subtitle">IMPROVED LEADS</span>
+      <h3 class="card-title blue-text">2X to 7X</h3>
+      <p class="card-desc">Quality lead generation</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="feature-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+    <div class="glow-bg blue-glow"></div>
+    <div class="icon-box blue-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+    </div>
+    <div class="card-content">
+      <span class="card-subtitle">SOCIAL MEDIA ENGAGEMENT</span>
+      <h3 class="card-title gold-text">3X to 9X</h3>
+      <p class="card-desc">Enhanced audience reach</p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="feature-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+    <div class="glow-bg yellow-glow"></div>
+    <div class="icon-box yellow-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+    </div>
+    <div class="card-content">
+      <span class="card-subtitle">BRAND EXPOSURE</span>
+      <h3 class="card-title bronze-text">80 to 2000%</h3>
+      <p class="card-desc">Massive visibility boost</p>
+    </div>
+  </div>
+</div>
 
     
     <!-- Accent Gradient Line -->
-    <div class="bottom-accent"></div>
+ <div class="bottom-accent"></div>
 <!-- About Us Section (New Addition matching second image) -->
-    <section class="about-section">
+    <section class="about-section ">
         <div class="about-container">
-            <div class="about-content">
+            <div class="about-content " data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" >
                 <div class="about-badge">About US</div>
                 <h2 class="about-heading">
                     <span class="red-text">Providing cutting-edge</span><br>
@@ -142,7 +253,13 @@
                 <p class="about-highlight">
                     <strong>AI Web Builder – Your Digital Partner for Transforming your Business with Digital Way</strong>
                 </p>
-                <ul class="about-features">
+                <ul class="about-features" data-aos="fade-up"
+     data-aos-anchor-placement="top-center " data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false">
                     <li>
                         <div class="feature-check"><i class="fa-solid fa-check"></i></div>
                         <span>Lorem Ipsum is simply dummy text of the printing</span>
@@ -157,7 +274,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="about-image-wrapper">
+            <div class="about-image-wrapper" data-aos="zoom-in-up"
+     data-aos-anchor-placement="top-center " data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false">
                 <img src="images/Home-about-us-sect-a1webbuilder 1.png" alt="Team Collaboration" class="about-img">
             </div>
         </div>
@@ -194,20 +317,45 @@
     </section>
 
     <!-- Why Work With A1 Web Builder / Achievement Matrix Section (New Addition) -->
-    <section class="achievement-section">
+    <section class="achievement-section " data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center" >
         <h2 class="achievement-title">Why Work With A1 Web Builder ?</h2>
         <p class="achievement-subtitle">We are so proud of our <span>achievement</span> matrix</p>
 
         <div class="achievement-grid">
-            <div class="achievement-card">
+            <div class="achievement-card" data-aos="zoom-in-up"
+     data-aos-anchor-placement="top-center " data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false">
                 <div class="achievement-number">100 +</div>
                 <div class="achievement-label">Websites Designed & Developed</div>
             </div>
-            <div class="achievement-card">
+            <div class="achievement-card" data-aos="zoom-in-up"
+     data-aos-anchor-placement="top-center " data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false">
                 <div class="achievement-number">68 +</div>
                 <div class="achievement-label">Websites Optimized & Ranked</div>
             </div>
-            <div class="achievement-card">
+            <div class="achievement-card" data-aos="zoom-in-up"
+     data-aos-anchor-placement="top-center " data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false">
                 <div class="achievement-number">80+</div>
                 <div class="achievement-label">Social Media Campaigns Run</div>
             </div>
@@ -216,25 +364,55 @@
 
     <!-- Let's Connect / Contact Form Banner Section -->
   <div class="container">
-        <h2 class="section-title">Our Partners & Brands</h2>
+        <h2 class="section-title" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">Our Partners & Brands</h2>
         
-        <div class="logo-grid" id="logoGrid">
-            <!-- Cards will be dynamically injected or structured via HTML -->
-            <div class="logo-card"><img src="images/1.png" alt="Brand Logo 1" style=" width: 120px; object-position: 0% 0%;"></div>
-            <div class="logo-card"><img src="images/2.png" alt="Brand Logo 2" style="width: 120px;object-position: 25% 0%;"></div>
-            <div class="logo-card"><img src="images/3.png" alt="Brand Logo 3" style="width: 120px; object-position: 50% 0%;"></div>
-            <div class="logo-card"><img src="images/4.png" alt="Brand Logo 4" style="width: 120px; object-position: 75% 0%;"></div>
-            <div class="logo-card"><img src="images/5.png" alt="Brand Logo 5" style=" width: 120px; object-position: 100% 0%;"></div>
-            
-            <div class="logo-card"><img src="images/1.png" alt="Brand Logo 6" style="width: 120px; object-position: 0% 100%;"></div>
-            <div class="logo-card"><img src="images/3.png" alt="Brand Logo 7" style="width: 120px; object-position: 33% 100%;"></div>
-            <div class="logo-card"><img src="images/4.png" alt="Brand Logo 8" style="width: 120px; object-position: 66% 100%;"></div>
-            <div class="logo-card"><img src="images/5.png" alt="Brand Logo 9" style="width: 120px;object-position: 100% 100%;"></div>
-                   <div class="logo-card"><img src="images/5.png" alt="Brand Logo 9" style="width: 120px;object-position: 100% 100%;"></div>
-
-        </div>
+<div class="logo-showcase">
+  <!-- Line 1: Moves Left -->
+  <div class="slider-row text-left">
+    <div class="slider-track track-left">
+      <!-- Original Group -->
+      <div class="logo-item"><img src="images/logo/book_bond-Logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item"><img src="images/logo/arjit-agarwal-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item"><img src="images/logo/bhashikskill-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item"><img src="images/logo/degatech_logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item"><img src="images/logo/dolphin-car-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <!-- Duplicated Group for Infinite Loop -->
+      <div class="logo-item" aria-hidden="true"><img src="images/logo/Ewan-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item" aria-hidden="true"><img src="images/logo/Hotel-Desert-Tulip-Logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      
     </div>
- <div class="max-w-6xl mx-auto text-center mb-16 mt-16 pt-16">
+  </div>
+
+  <!-- Line 2: Moves Right -->
+  <div class="slider-row text-right">
+    <div class="slider-track track-right">
+      <!-- Original Group -->
+      <div class="logo-item"><img src="images/logo/techsecure-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item"><img src="images/logo/toms-hideout-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+
+      <!-- Duplicated Group for Infinite Loop -->
+      <div class="logo-item" aria-hidden="true"><img src="images/logo/madhusudan-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item" aria-hidden="true"><img src="images/logo/myparttime-Logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+      <div class="logo-item" aria-hidden="true"><img src="images/logo/pharmacad-logo-V2-min.png" alt="book_bond-Logo-V2-min"></div>
+    </div>
+  </div>
+</div>
+    </div>
+ <div class="max-w-6xl mx-auto text-center mb-16 mt-16 pt-16" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
         <!-- Top Title -->
         <h2 class="text-3xl sm:text-4xl font-bold text-deepPurple tracking-wide mb-3">Our Services</h2>
         
@@ -252,10 +430,17 @@
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
 
         <!-- Card 01: WordPress Website Development -->
-        <div class="service-card-1 rounded-sm p-6 sm:p-8 flex flex-col justify-between">
+        <div class="service-card-1 rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div>
                 <div class="flex items-start justify-between mb-6">
-                    <span class="text-4xl sm:text-5xl font-bold text-deepPurple">01</span>
+                    <span class="text-4xl sm:text-5xl font-bold text-deepPurpl para-text-white-600">01</span>
                     <div class="w-14 h-14 bg-cyan-50 rounded-full flex items-center justify-center p-2 shadow-inner border border-cyan-100">
                         <!-- Desktop & Mobile Illustration SVG -->
                         <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -266,15 +451,22 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="font-bold text-gray-900 text-sm sm:text-base mb-3 tracking-wide">WORDPRESS WEBSITE DEVELOPMENT</h3>
-                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                <h3 class="font-bold text-gray-900 para-text-white-600 text-sm sm:text-base mb-3 tracking-wide">WORDPRESS WEBSITE DEVELOPMENT</h3>
+                <p class="text-gray-600 para-text-white-600 text-xs sm:text-sm leading-relaxed">
                     We understand that your website is the face of your business, so we craft custom designs that ensure a lasting and impactful first impression.
                 </p>
             </div>
         </div>
 
         <!-- Card 02: E-Commerce Website Development -->
-        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between">
+        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div>
                 <div class="flex items-start justify-between mb-6">
                     <span class="text-4xl sm:text-5xl font-bold text-deepPurple">02</span>
@@ -294,7 +486,14 @@
         </div>
 
         <!-- Card 03: Website Redesign & Optimization -->
-        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between">
+        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div>
                 <div class="flex items-start justify-between mb-6">
                     <span class="text-4xl sm:text-5xl font-bold text-deepPurple">03</span>
@@ -317,7 +516,14 @@
         </div>
 
         <!-- Card 04: Landing Page Development -->
-        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between">
+        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div>
                 <div class="flex items-start justify-between mb-6">
                     <span class="text-4xl sm:text-5xl font-bold text-deepPurple">04</span>
@@ -336,7 +542,14 @@
         </div>
 
         <!-- Card 05: SEO Services -->
-        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between">
+        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div>
                 <div class="flex items-start justify-between mb-6">
                     <span class="text-4xl sm:text-5xl font-bold text-deepPurple">05</span>
@@ -356,7 +569,14 @@
         </div>
 
         <!-- Card 06: Social Media Marketing -->
-        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between">
+        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div>
                 <div class="flex items-start justify-between mb-6">
                     <span class="text-4xl sm:text-5xl font-bold text-deepPurple">06</span>
@@ -375,8 +595,17 @@
         </div>
 
     </div>
-<div class="wrap-our bg-processBg py-16 my-16">
-    <div class="max-w-4xl mx-auto text-center mb-16 ">
+<div class=" bg-processBg py-16 my-16 ">
+
+    <div class="wrap-our">
+    <div class="max-w-4xl mx-auto text-center mb-16 " data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
         <h3 class="text-xl sm:text-2xl font-bold text-white tracking-wide mb-3 capitalize">
             our Process for success
         </h3>
@@ -391,7 +620,14 @@
     <div class="max-w-6xl  w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
 
         <!-- Card 01: Strategy & Planning -->
-        <div class="process-card p-8 flex flex-col justify-between relative text-center">
+        <div class="process-card p-8 flex flex-col justify-between relative text-center" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <!-- Top section: Number 01 -->
             <div class="flex justify-end w-full mb-4">
                 <span class="text-4xl sm:text-5xl font-bold text-processOrange">01</span>
@@ -414,7 +650,14 @@
         </div>
 
         <!-- Card 02: Execution & Optimization -->
-        <div class="process-card p-8 flex flex-col justify-between relative text-center">
+        <div class="process-card p-8 flex flex-col justify-between relative text-center" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <!-- Top section: Number 02 -->
             <div class="flex justify-end w-full mb-4">
                 <span class="text-4xl sm:text-5xl font-bold text-processOrange">02</span>
@@ -436,7 +679,14 @@
         </div>
 
         <!-- Card 03: Analytics & Growth -->
-        <div class="process-card p-8 flex flex-col justify-between relative text-center">
+        <div class="process-card p-8 flex flex-col justify-between relative text-center" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <!-- Top section: Number 03 -->
             <div class="flex justify-end w-full mb-4">
                 <span class="text-4xl sm:text-5xl font-bold text-processOrange">03</span>
@@ -458,15 +708,31 @@
         </div>
 
     </div></div>
-<div class="container">
+
+    </div>
+<div class="container p-3">
         <!-- Main Section Header -->
-        <div class="header-section">
+        <div class="header-section " data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <h2>What We Built. What Changed.</h2>
             <p>From better search visibility to stronger websites and qualified leads, see how our digital marketing solutions helped businesses move forward. ALL</p>
         </div>
 
         <!-- Filter Buttons Grid -->
-        <div class="filter-buttons">
+        <div class="filter-buttons" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <button class="filter-btn">SEO & Organic Growth</button>
             <button class="filter-btn">Websites & UX</button>
             <button class="filter-btn">E-Commerce</button>
@@ -476,15 +742,36 @@
 
         <!-- Active Category Tag -->
         <div>
-            <span class="sub-tag-badge">SEO & Organic Growth Healthcare</span>
+            <span class="sub-tag-badge" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">SEO & Organic Growth Healthcare</span>
         </div>
 
         <!-- Case Study Content Grid -->
-        <div class="case-study-card">
-            <div class="case-info">
+        <div class="case-study-card" >
+            <div class="case-info" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <h3>P R Krishnan – Neurologist <span>...</span></h3>
                 
-                <div class="info-block">
+                <div class="info-block" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                     <div class="info-block-title">
                         <span>⚠️</span> Problem:
                     </div>
@@ -493,7 +780,14 @@
                     </div>
                 </div>
 
-                <div class="info-block">
+                <div class="info-block" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                     <div class="info-block-title">
                         <span>💡</span> Our Solution:
                     </div>
@@ -504,14 +798,21 @@
                 </div>
             </div>
 
-            <div class="case-image-wrapper">
+            <div class="case-image-wrapper" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <!-- Replace with your specific portfolio image source if needed -->
                 <img src="images/service.png" alt="Lightbulb Presentation representing business solutions">
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container p-3">
         <!-- Section Header -->
         <h2 class="section-title">6-Month Impact & Achievements</h2>
 
@@ -519,7 +820,14 @@
         <div class="impact-grid">
             
             <!-- Card 1: Rupee Icon -->
-            <div class="impact-card">
+            <div class="impact-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <div>
                     <div class="card-icon">₹</div>
                     <div class="card-value">₹520</div>
@@ -529,7 +837,14 @@
             </div>
 
             <!-- Card 2: Graduation/Academic Icon -->
-            <div class="impact-card">
+            <div class="impact-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <div>
                     <div class="card-icon">🎓</div>
                     <div class="card-value">₹520</div>
@@ -539,7 +854,14 @@
             </div>
 
             <!-- Card 3: Percentage/Analytics Icon -->
-            <div class="impact-card">
+            <div class="impact-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <div>
                     <div class="card-icon">%</div>
                     <div class="card-value" style="font-size: 1.3rem; line-height: 1.6;">...</div>
@@ -549,7 +871,14 @@
             </div>
 
             <!-- Card 4: Chart/Bar Icon -->
-            <div class="impact-card">
+            <div class="impact-card"  data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <div>
                     <div class="card-icon">📊</div>
                     <div class="card-value">₹520</div>
@@ -563,15 +892,29 @@
 
 
 
-    <div class="container">
+    <div class="container p-3">
         <!-- Top Section Header -->
-        <div class="header-section pt-16 mt-16">
+        <div class="header-section pt-16 mt-16" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <h2>Digital Expertise Across Industries</h2>
             <p>From higher search rankings and stronger websites to increased qualified leads, see how our digital marketing solutions drive real business results.</p>
         </div>
 
         <!-- Industry Action Buttons Grid -->
-        <div class="industry-grid">
+        <div class="industry-grid" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <button class="industry-btn">Ecommerce</button>
             <button class="industry-btn">Healthcare</button>
             <button class="industry-btn">Real Estate</button>
@@ -581,7 +924,14 @@
         </div>
 
         <!-- Bottom Growth & Services Section -->
-        <div class="growth-section">
+        <div class="growth-section" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <!-- Left Info Column -->
             <div class="growth-left">
                 <h3>Results That Drive Growth</h3>
@@ -592,7 +942,14 @@
             </div>
 
             <!-- Right Interactive Accordion Column -->
-            <div class="growth-right">
+            <div class="growth-right" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <div class="accordion-bar">
                     <span>Complete Digital Visibility</span>
                     <div class="accordion-icon">+</div>
@@ -614,15 +971,36 @@
     </div>
 	
 	<section class="success-stories-section pt-16">
-        <div class="container">
-            <div class="header-content">
+        <div class="container p-3">
+            <div class="header-content" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <h2>Client Success Stories</h2>
                 <p>We've partnered with more than 16K clients and built lasting relationships based on trust, performance, and results. Here's what our clients have to say about their experience with our digital marketing services.</p>
             </div>
 
-            <div class="cards-grid">
+            <div class="cards-grid" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                 <!-- Card 1 -->
-                <div class="story-card">
+                <div class="story-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                     <div class="card-header">
                         <div class="avatar"></div>
                         <div class="author-info">
@@ -643,7 +1021,14 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="story-card">
+                <div class="story-card" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                     <div class="card-header">
                         <div class="avatar"></div>
                         <div class="author-info">
@@ -664,7 +1049,14 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="story-card">
+                <div class="story-card " data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
                     <div class="card-header">
                         <div class="avatar"></div>
                         <div class="author-info">
@@ -686,7 +1078,14 @@
             </div>
         </div>
     </section>
-<div class="faq-container pt-0 mt-16">
+<div class="faq-container pt-0 mt-16 p-3" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
         <h2 class="faq-heading">FAQs</h2>
         <p class="faq-subheading">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 
@@ -734,8 +1133,15 @@
         </div>
     </div>
 
-    <div class="showcase pt-16 mt-16">
-<div class="portfolio-container ">
+    <div class="showcase pt-16 mt-16" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+<div class="portfolio-container p-3 ">
         <h2 class="portfolio-title">Client Portfolio</h2>
         <h3 class="portfolio-subtitle">Some of our <span>client work</span></h3>
         
@@ -743,7 +1149,14 @@
         <p class="portfolio-subdesc">Explore our work and let's build some great web applications together with us!</p>
 
         <!-- Filter Buttons -->
-        <div class="filter-buttons">
+        <div class="filter-buttons" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
             <button class="filter-btn" data-filter="healthcare">Healthcare</button>
@@ -751,16 +1164,21 @@
         </div>
 
         <!-- Portfolio Items Grid -->
-        <div class="portfolio-grid">
+        <div class="portfolio-grid" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
             <div class="portfolio-item" data-category="healthcare">
                 <img src="images/show-1.png" alt="Project 1">
             </div>
             <div class="portfolio-item" data-category="ecommerce">
                 <img src="images/show-2.png" alt="Project 2">
             </div>
-            <div class="portfolio-item" data-category="web">
-                <img src="images/show-3.png" alt="Project 3">
-            </div>
+           
             <div class="portfolio-item" data-category="web">
                 <img src="images/show-4.png" alt="Project 4">
             </div>
@@ -783,7 +1201,14 @@
     </div>
 </div>
 
-<div class="contact-container pt-16 mt-16">
+<div class="contact-container pt-16 mt-16" data-aos="fade-up"
+    data-aos-offset="50"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
         <h4 class="contact-subtitle">let’s talk!</h4>
         <h2 class="contact-title">Got an idea or project? Let’s turn it into reality</h2>
 
@@ -886,164 +1311,79 @@
         <!-- Bottom decorative shade bar -->
         <div class="footer-bottom-bar"></div>
     </footer>
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Form submitted successfully!');
-            // Add custom form submission logic here (e.g., fetch API)
+<script>
+      AOS.init();
+
+      if (typeof tailwind !== 'undefined') {
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepPurple:    '#5925a1',
+          brandPurple:   '#4c1d95',
+          brandRed:      '#f33d25',
+          cardBorder:    '#d4b7e8',
+          processBg:     '#000',
+          processOrange: '#f24233',
+          processDark:   '#222222'
         }
-		// Optional enhancement: Add dynamic interactions or simple card entry animations
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".story-card");
+      }
+    }
+  };
+}
 
-    // Example subtle interaction logging or intersection observer trigger
-    cards.forEach((card, index) => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = `all 0.5s ease ${index * 0.15}s`;
+(function () {
+  const toggle   = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+  const overlay  = document.getElementById('nav-overlay');
+  const closeBtn = document.getElementById('close-menu');
 
-        setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, 100);
-    });
-});
-    </script>
-    <script>
-        // JavaScript for filtering portfolio items based on active button
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+  function openMenu() {
+    navLinks.classList.add('active');
+    overlay.classList.add('active');
+    closeBtn.classList.add('active');
+    document.body.classList.add('no-scroll');
+    toggle.setAttribute('aria-expanded', 'true');
+    closeBtn.focus();
+  }
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
+  function closeMenu() {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
+    closeBtn.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
 
-                const filterValue = button.getAttribute('data-filter');
+  // Open / close with hamburger
+  toggle.addEventListener('click', () => {
+    navLinks.classList.contains('active') ? closeMenu() : openMenu();
+  });
 
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        // JavaScript to handle toggle effect on click (rotates plus to an 'x' shape)
-        const faqItems = document.querySelectorAll('.faq-item');
+  // ✅ Overlay click closes the menu
+  overlay.addEventListener('click', closeMenu);
 
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-    </script>
-    <script>
-        // Interactive JavaScript for Accordions and Industry filters
-        document.addEventListener('DOMContentLoaded', () => {
-            const industryButtons = document.querySelectorAll('.industry-btn');
-            industryButtons.forEach((btn, index) => {
-                btn.addEventListener('click', () => {
-                    console.log(`Selected Industry: ${btn.textContent}`);
-                });
-            });
+  // Close button
+  closeBtn.addEventListener('click', closeMenu);
 
-            const accordions = document.querySelectorAll('.accordion-bar');
-            accordions.forEach(bar => {
-                bar.addEventListener('click', () => {
-                    const icon = bar.querySelector('.accordion-icon');
-                    if (icon.textContent === '+') {
-                        icon.textContent = '−';
-                        icon.style.transform = 'rotate(180deg)';
-                    } else {
-                        icon.textContent = '+';
-                        icon.style.transform = 'rotate(0deg)';
-                    }
-                });
-            });
-        });
-    </script>
+  // Close when a nav link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
 
-    <script>
-        // Interactive JavaScript handler
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.impact-card');
-            
-            cards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    console.log(`Impact achievement card ${index + 1} clicked.`);
-                });
-            });
-        });
-    </script>
+  // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
 
-
-    <script>
-        // Interactive JavaScript handlers for tab filters or clicks
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    filterButtons.forEach(btn => btn.style.opacity = '1');
-                    e.target.style.opacity = '0.7';
-                    console.log(`Filtered by category: ${e.target.textContent}`);
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const processCards = document.querySelectorAll('.process-card');
-            processCards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    console.log(`Process card ${index + 1} clicked.`);
-                });
-            });
-        });
-    </script>
-    <script>
-        // JavaScript Enhancement: Interactive logging / dynamic adjustments
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.logo-card');
-            
-            cards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    console.log(`Logo card ${index + 1} clicked.`);
-                });
-            });
-        });
-    </script>
-    <!-- JavaScript for Mobile Menu Toggle -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-      <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        deepPurple: '#5925a1',
-                        brandPurple: '#4c1d95',
-                        brandRed: '#f33d25',
-                        cardBorder: '#d4b7e8',
-                           processBg: '#53298c',
-                        processOrange: '#f24233',
-                        processDark: '#222222',
-                    }
-                }
-            }
-        }
-    </script>
+  // Reset state when resizing to desktop
+  window.matchMedia('(max-width: 992px)').addEventListener('change', (e) => {
+    if (!e.matches) closeMenu();
+  });
+})();
+</script>
 </body>
 </html>
