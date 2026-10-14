@@ -201,3 +201,234 @@ document.addEventListener('DOMContentLoaded', () => {
    Must run AFTER the Tailwind CDN script. Guarded so it never
    throws a ReferenceError if Tailwind isn't present.
    ============================================================ */
+
+$(function () {
+
+  /* =========================================================
+     0. AOS INIT
+     ========================================================= */
+  if (window.AOS) {
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: false, mirror: true });
+  }
+
+  var $grid   = $('#portfolioGrid');
+  var $items  = $grid.find('.portfolio-item');
+  var $empty  = $('.portfolio-empty');
+
+  /* make items keyboard focusable */
+  $items.attr({ tabindex: 0, role: 'button' });
+
+
+  /* =========================================================
+     1. FILTERING WITH STAGGERED ANIMATION
+     ========================================================= */
+  var filterTimer = null;
+
+  function applyFilter(filter) {
+    clearTimeout(filterTimer);
+
+    /* phase 1 — fade everything out */
+    $items.addClass('is-hiding');
+
+    /* phase 2 — after fade-out, swap visibility and stagger back in */
+    filterTimer = setTimeout(function () {
+
+      var visible = [];
+
+      $items.each(function () {
+        var $el   = $(this);
+        var match = (filter === 'all') || ($el.data('category') === filter);
+
+        if (match) {
+          $el.removeClass('is-hidden');
+          visible.push(this);
+        } else {
+          $el.addClass('is-hidden').removeClass('is-hiding');
+        }
+      });
+
+      /* toggle empty state */
+      $empty.toggle(visible.length === 0);
+
+      /* phase 3 — reveal one by one */
+      visible.forEach(function (el, i) {
+        setTimeout(function () {
+          void el.offsetHeight;              /* force reflow so transition runs */
+          $(el).removeClass('is-hiding');
+        }, i * 55);
+      });
+
+    }, 260);
+  }
+
+  $('.filter-btn').on('click', function () {
+    var $btn = $(this);
+    if ($btn.hasClass('active')) return;
+
+    $('.filter-btn').removeClass('active').attr('aria-pressed', 'false');
+    $btn.addClass('active').attr('aria-pressed', 'true');
+
+    applyFilter($btn.data('filter'));
+  });
+
+
+  /* =========================================================
+     2. LIGHTBOX — SLIDING IMAGE POPUP
+     ========================================================= */
+  var $lb       = $('#pfLightbox');
+  var $track    = $('#pfTrack');
+  var $caption  = $('#pfCaption');
+  var $counter  = $('#pfCounter');
+
+  var slides    = [];
+  var current   = 0;
+  var isOpen    = false;
+  var $lastItem = null;
+
+  /* collect only the currently visible (filtered) items */
+  function getVisibleItems() {
+    return $grid.find('.portfolio-item').not('.is-hidden').toArray();
+  }
+
+  /* build the sliding track */
+  function buildSlides(list) {
+    slides = list.map(function (el) {
+      var $img = $(el).find('img').first();
+      return {
+        src: $img.attr('src') || '',
+        alt: $img.attr('alt') || 'Project preview'
+      };
+    });
+
+    $track.html(slides.map(function (s) {
+      return '<div class="pf-slide"><img src="' + s.src + '" alt="' + s.alt + '"></div>';
+    }).join(''));
+
+    $lb.toggleClass('pf-single', slides.length < 2);
+  }
+
+  /* slide to index */
+  function goTo(index, animate) {
+    if (!slides.length) return;
+
+    current = (index + slides.length) % slides.length;
+
+    if (animate === false) {
+      $track.css('transition', 'none');
+    }
+
+    $track.css('transform', 'translateX(' + (-current * 100) + '%)');
+
+    if (animate === false) {
+      void $track[0].offsetHeight;
+      $track.css('transition', '');
+    }
+
+    $caption.text(slides[current].alt);
+    $counter.text((current + 1) + ' / ' + slides.length);
+  }
+
+  /* open */
+  function openLightbox($item) {
+    var list = getVisibleItems();
+    var idx  = list.indexOf($item[0]);
+    if (idx < 0) idx = 0;
+
+    buildSlides(list);
+    goTo(idx, false);
+
+    $lb.addClass('is-open');
+    $('body').addClass('pf-no-scroll');
+    isOpen = true;
+
+    setTimeout(function () {
+      $lb.find('.pf-lb-close').trigger('focus');
+    }, 80);
+  }
+
+  /* close */
+  function closeLightbox() {
+    if (!isOpen) return;
+    isOpen = false;
+
+    $lb.removeClass('is-open');
+    $('body').removeClass('pf-no-scroll');
+
+    if ($lastItem) {
+      $lastItem.trigger('focus');
+      $lastItem = null;
+    }
+  }
+
+  /* ---- events ---- */
+
+  /* open on click */
+  $grid.on('click', '.portfolio-item', function () {
+    $lastItem = $(this);
+    openLightbox($(this));
+  });
+
+  /* open with keyboard */
+  $grid.on('keydown', '.portfolio-item', function (e) {
+    if (e.key === 'Enter' || e.key === ' ' || e.keyCode === 13 || e.keyCode === 32) {
+      e.preventDefault();
+      $lastItem = $(this);
+      openLightbox($(this));
+    }
+  });
+
+  /* controls */
+  $lb.on('click', '.pf-lb-close', function (e) {
+    e.stopPropagation();
+    closeLightbox();
+  });
+
+  $lb.on('click', '.pf-lb-prev', function (e) {
+    e.stopPropagation();
+    goTo(current - 1, true);
+  });
+
+  $lb.on('click', '.pf-lb-next', function (e) {
+    e.stopPropagation();
+    goTo(current + 1, true);
+  });
+
+  /* click on the dark backdrop closes */
+  $lb.on('click', function (e) {
+    if (e.target === this) closeLightbox();
+  });
+
+  /* keyboard navigation */
+  $(document).on('keydown', function (e) {
+    if (!isOpen) return;
+
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft' || e.keyCode === 37) {
+      e.preventDefault();
+      goTo(current - 1, true);
+    } else if (e.key === 'ArrowRight' || e.keyCode === 39) {
+      e.preventDefault();
+      goTo(current + 1, true);
+    }
+  });
+
+  /* swipe support (mobile) */
+  var touchStartX = null;
+
+  $lb.on('touchstart', function (e) {
+    touchStartX = e.originalEvent.touches[0].clientX;
+  });
+
+  $lb.on('touchend', function (e) {
+    if (touchStartX === null) return;
+
+    var dx = e.originalEvent.changedTouches[0].clientX - touchStartX;
+
+    if (Math.abs(dx) > 50) {
+      goTo(current + (dx < 0 ? 1 : -1), true);
+    }
+    touchStartX = null;
+  });
+
+});
