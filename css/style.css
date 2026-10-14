@@ -3170,7 +3170,7 @@ body.pf-no-scroll{ overflow:hidden; }
             color: #4A156C;
             margin-bottom: 8px;
         }
-            .achievement-number{ font-size: 28px; text-align: left;} 
+            .achievement-number{ font-size: 42px; text-align: left;} 
             .achievement-label{ text-align: left; font-size: 1.05rem;}
 .feature-card{ width: 100%;} 
  .hero-section::before{ background-color: #ffffffad; position: absolute; width: 100% !important; margin: 0px; height: 100%;  left: 0px; content: "";}
