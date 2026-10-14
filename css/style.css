@@ -1826,7 +1826,7 @@ border: 1px solid #5925a1;
             align-items: center;
             gap: 8px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 24px;
             color: var(--text-dark);
             margin-bottom: 6px;
         }
