@@ -434,3 +434,49 @@ $(function () {
   });
 
 });
+
+  document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".card-value");
+
+            const animateCounter = (el) => {
+                const target = parseFloat(el.getAttribute("data-target"));
+                const prefix = el.getAttribute("data-prefix") || "";
+                const suffix = el.getAttribute("data-suffix") || "";
+                const decimals = parseInt(el.getAttribute("data-decimals")) || 0;
+                
+                const duration = 1500; // Animation duration in ms
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    
+                    // Ease-out quad function for smoother slowing effect near the end
+                    const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                    const currentValue = (easeOutProgress * target).toFixed(decimals);
+
+                    el.innerText = `${prefix}${parseFloat(currentValue).toLocaleString()}${suffix}`;
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    }
+                };
+
+                requestAnimationFrame(updateCount);
+            };
+
+            // Trigger animation on scroll when section enters viewport
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetCard = entry.target.querySelector(".card-value");
+                        if (targetCard && !targetCard.classList.contains("animated")) {
+                            targetCard.classList.add("animated");
+                            animateCounter(targetCard);
+                        }
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll(".impact-card").forEach(card => observer.observe(card));
+        });

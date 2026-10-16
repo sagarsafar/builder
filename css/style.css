@@ -581,7 +581,11 @@
     max-width: 1100px;
     width: 100%;
 }
-
+@media (min-width: 1280px) {
+    .container {
+        max-width: 72rem !important;
+    }
+}
 /* Header Text Styles */
 .header-section {
     margin-bottom: 30px;
@@ -1385,7 +1389,7 @@
         }
 
         .achievement-card {
-            padding: 20px;
+            padding: 0px;
             position: relative;
         }
 
@@ -1444,7 +1448,7 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            max-width: 1100px;
+            max-width: 1280px; width: 100%;
             margin: 0 auto 60px;
             flex-wrap: wrap;
         }
@@ -1803,13 +1807,14 @@ border: 1px solid #5925a1;
         }
 
         .case-info h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+         font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
         }
 
         .case-info h3 span {
@@ -2084,7 +2089,7 @@ border: 1px solid #5925a1;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
     gap: 20px;
-    max-width: 1440px;
+    max-width: 72rem;
     margin: 0 auto;
     padding: 20px;
     font-family: system-ui, -apple-system, sans-serif;
@@ -2160,9 +2165,9 @@ border: 1px solid #5925a1;
 .service-card:hover{ transition: 2s; border-radius: 12px;  background-color: #311c4f;}
 
 .contact-container {
-            max-width:1440px;
-            width: 100%;
-            text-align: center; padding: 0px 15px;
+            max-width:72rem;
+            width: 100%; margin: 0 auto;
+            text-align: center; padding: 0px 25px;
         }
 
         .contact-subtitle {
@@ -2403,7 +2408,7 @@ footer {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .header-content {
@@ -2666,12 +2671,12 @@ footer {
             border: 2px solid #5925a1; margin: 0px 15px;
   
         }
-.wrap-our{ margin: 0px 15px;}
+.wrap-our{ margin: 0px 25px;}
         /* Standard Cards 02-06 */
         .service-card {
             background: #ffffff;
 border: 1px solid #5925a1;
-         margin: 0px 15px;
+         margin: 0px 25px;
             transition: all 0.3s ease;
         }
 
@@ -2693,7 +2698,7 @@ border: 1px solid #5925a1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 15px;
   background: #fff;
   box-shadow: 0 1px 12px rgba(0, 0, 0, .08);
 }
@@ -2782,7 +2787,7 @@ h1.tracking-tight{font-size:1.4rem!important;}
 
 
 .portfolio-container{
-  max-width:1440px; text-align: center;
+  max-width:72rem; text-align: center;
   margin:0 auto;
   padding:70px 22px 90px;
   color:var(--pf-text);
@@ -3023,6 +3028,7 @@ body.pf-no-scroll{ overflow:hidden; }
   border-radius:10px;
   display:block;
   box-shadow:0 12px 40px rgba(0,0,0,.5);
+  zoom: 3;
 }
 
 /* nav buttons */
@@ -3106,7 +3112,126 @@ body.pf-no-scroll{ overflow:hidden; }
   letter-spacing:.12em;
   opacity:.6;
 }
+/* Modern Styling Variables */
+        :root {
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-primary: #4f46e5;
+            --accent-light: #eef2ff;
+            --trend-positive-bg: #dcfce7;
+            --trend-positive-text: #15803d;
+            --card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
 
+        /* Section Title Header */
+        .section-title {
+            color: var(--text-main);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        /* Responsive Grid Container */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Impact Card UI */
+        .impact-card {
+            background-color: var(--bg-card);
+            border: 1px solid #f1f5f9;
+            border-radius: 16px;
+            padding: 1.75rem;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle top border accent on hover */
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), #818cf8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: #e2e8f0;
+        }
+
+        .impact-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Icon Badge */
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background-color: var(--accent-light);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Card Metric Values */
+        .card-value {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Metric Label */
+        .card-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+        }
+
+        /* Trend Badge Indicator */
+        .card-trend {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            background-color: var(--trend-positive-bg);
+            color: var(--trend-positive-text);
+            font-size: 0.825rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .card-trend svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
 /* single-image mode */
 .pf-lightbox.pf-single .pf-lb-nav,
 .pf-lightbox.pf-single .pf-lb-counter{ display:none; }
@@ -3115,10 +3240,20 @@ body.pf-no-scroll{ overflow:hidden; }
    5. RESPONSIVE
    ========================================================= */
 @media (max-width:900px){
+
+    
+
   .portfolio-grid{ grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:18px; }
 }
 
 @media (max-width:640px){
+
+    .container{ padding: 0px 25px !important;}
+
+    .faq-container{padding: 0px 25px !important;}
+    .faq-grid{ padding: 0px !important;}
+
+
   .portfolio-container{ padding:48px 16px 64px; }
   .portfolio-grid{ grid-template-columns:repeat(2,1fr); gap:12px; }
   .portfolio-item{ border-radius:14px; }

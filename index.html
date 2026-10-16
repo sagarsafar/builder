@@ -12,7 +12,7 @@
 
 
 
-
+<link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="css/style.css">
 
@@ -433,7 +433,7 @@
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
 
         <!-- Card 01: WordPress Website Development -->
-        <div class="service-card-1 rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
+        <div class="service-card rounded-sm p-6 sm:p-8 flex flex-col justify-between" data-aos="fade-up"
     data-aos-offset="10"
     data-aos-delay="80"
     data-aos-duration="1000"
@@ -713,7 +713,7 @@
     </div></div>
 
     </div>
-<div class="container p-3">
+<div class="container">
         <!-- Main Section Header -->
         <div class="header-section " data-aos="fade-up"
     data-aos-offset="10"
@@ -814,88 +814,74 @@
             </div>
         </div>
     </div>
-
-    <div class="container p-3">
+<div class="container ">
         <!-- Section Header -->
         <h2 class="section-title">6-Month Impact & Achievements</h2>
 
         <!-- Grid Container -->
         <div class="impact-grid">
             
-            <!-- Card 1: Rupee Icon -->
-            <div class="impact-card" data-aos="fade-up"
-    data-aos-offset="10"
-    data-aos-delay="80"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center">
+            <!-- Card 1: Cost Per Lead -->
+            <div class="impact-card">
                 <div>
                     <div class="card-icon">₹</div>
-                    <div class="card-value">₹520</div>
+                    <div class="card-value" data-target="520" data-prefix="₹">₹0</div>
                     <div class="card-label">Cost Per Lead</div>
                 </div>
-                <div class="card-trend">down from ₹1,450</div>
+                <div class="card-trend">
+                    <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                    Down from ₹1,450
+                </div>
             </div>
 
-            <!-- Card 2: Graduation/Academic Icon -->
-            <div class="impact-card" data-aos="fade-up"
-    data-aos-offset="10"
-    data-aos-delay="80"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center">
+            <!-- Card 2: Graduates / Conversions -->
+            <div class="impact-card">
                 <div>
                     <div class="card-icon">🎓</div>
-                    <div class="card-value">₹520</div>
-                    <div class="card-label">Cost Per Lead</div>
+                    <div class="card-value" data-target="1250" data-suffix="+">0</div>
+                    <div class="card-label">Students Enrolled</div>
                 </div>
-                <div class="card-trend">down from ₹1,450</div>
+                <div class="card-trend">
+                    <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+                    Up from 420
+                </div>
             </div>
 
-            <!-- Card 3: Percentage/Analytics Icon -->
-            <div class="impact-card" data-aos="fade-up"
-    data-aos-offset="10"
-    data-aos-delay="80"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center">
+            <!-- Card 3: Conversion Rate -->
+            <div class="impact-card">
                 <div>
                     <div class="card-icon">%</div>
-
-                    <div class="card-label">Cost Per Lead</div>
+                    <div class="card-value" data-target="68" data-suffix="%">0%</div>
+                    <div class="card-label">Conversion Rate</div>
                 </div>
-                <div class="card-trend">down from ₹1,450</div>
+                <div class="card-trend">
+                    <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+                    Up from 24%
+                </div>
             </div>
 
-            <!-- Card 4: Chart/Bar Icon -->
-            <div class="impact-card"  data-aos="fade-up"
-    data-aos-offset="10"
-    data-aos-delay="80"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center">
+            <!-- Card 4: ROI / Revenue Growth -->
+            <div class="impact-card">
                 <div>
                     <div class="card-icon">📊</div>
-                    <div class="card-value">₹520</div>
-                    <div class="card-label">Cost Per Lead</div>
+                    <div class="card-value" data-target="4.8" data-suffix="x" data-decimals="1">0x</div>
+                    <div class="card-label">Return on Ad Spend</div>
                 </div>
-                <div class="card-trend">down from ₹1,450</div>
+                <div class="card-trend">
+                    <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
+                    Up from 1.8x
+                </div>
             </div>
 
         </div>
     </div>
 
+    <!-- Smooth Javascript Counter Script -->
 
 
-    <div class="container p-3">
+
+
+    <div class="container 2">
         <!-- Top Section Header -->
         <div class="header-section pt-16 mt-16" data-aos="fade-up"
     data-aos-offset="10"
@@ -974,7 +960,7 @@
     </div>
 	
 	<section class="success-stories-section pt-16">
-        <div class="container p-3">
+        <div class="container ">
             <div class="header-content" data-aos="fade-up"
     data-aos-offset="10"
     data-aos-delay="80"
@@ -1081,7 +1067,7 @@
             </div>
         </div>
     </section>
-<div class="faq-container pt-0 mt-16 p-3" data-aos="fade-up"
+<div class="faq-container pt-0 mt-16" data-aos="fade-up"
     data-aos-offset="10"
     data-aos-delay="80"
     data-aos-duration="1000"
@@ -1156,7 +1142,7 @@
     data-aos-anchor-placement="top-center">
 
 <!-- =========================== PORTFOLIO =========================== -->
-<div class="portfolio-container p-3">
+<div class="portfolio-container">
 
   <h2 class="portfolio-title">Client Portfolio</h2>
   <h3 class="portfolio-subtitle">Some of our <span>client work</span></h3>
