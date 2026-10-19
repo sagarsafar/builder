@@ -139,63 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // }
 
   /* ===== 12. FAQ accordion ================================ */
-  const faqItems = document.querySelectorAll('.faq-item');
 
-  const dummyAnswers = [
-    "A1 Web Builder is a full-stack web development and digital marketing agency offering website design and development, WordPress development, eCommerce solutions, search engine optimization (SEO), Google Ads, social media marketing, lead generation, and custom software development. We help businesses build their online presence, reach relevant audiences, and grow through technology and digital marketing.",
-    "A1 Web Builder is based in Thane West, Maharashtra, India. We serve businesses in Thane, Mumbai, Navi Mumbai, across India, and in international markets. Our team can collaborate remotely with clients on website development, SEO, digital marketing, and other technology projects.",
-    "Yes. We provide website design and development services for businesses that need a new website or want to redesign an existing one. Our projects include business websites, corporate websites, landing pages, custom web applications, and other solutions tailored to a company's goals, audience, and functional requirements.",
-    "Yes. We develop WordPress websites and eCommerce stores based on business requirements. Our eCommerce solutions can include WooCommerce, Shopify, Magento, product catalogues, payment gateway integration, shopping carts, checkout functionality, and order management features.",
-    "A1 Web Builder provides SEO services that can include keyword research, technical SEO audits, on-page optimization, content optimization, internal linking, website structure improvements, local SEO, and authority-building activities. Our approach focuses on improving relevant organic search visibility and helping businesses attract qualified website visitors.",
-    "Yes. We help businesses improve their search performance through technical optimization, relevant content, keyword targeting, website improvements, and other SEO activities. Results depend on competition, website condition, search demand, and implementation. SEO takes time, and specific rankings or results cannot be guaranteed.",
-    "Yes. We can help businesses plan and manage digital advertising campaigns on Google Ads, Facebook, Instagram, and LinkedIn. Campaigns can focus on lead generation, website enquiries, phone calls, brand awareness, or online sales, depending on the business objectives, target audience, and advertising budget.",
-    "The cost depends on the project scope, required features, competition, target market, and level of ongoing support. Website development pricing varies according to design and functionality, while SEO pricing depends on the website's needs and campaign objectives. Contact A1 Web Builder to discuss your requirements and receive a project-specific quotation.",
-    "Yes. We can help improve your website's readiness for AI-assisted discovery through strong SEO foundations, useful and original content, clear business information, structured data where appropriate, and relevant online authority signals. However, mentions or citations in ChatGPT, Gemini, and other AI platforms depend on their individual systems and cannot be guaranteed.",
-    "To get started, visit A1 Web Builder and submit an enquiry describing your business, required services, project goals, and expected timeline. You can also email hello@a1webbuilder.com. Our team can review your requirements and discuss a suitable approach for your website, SEO, digital marketing, or software project.",
-  ];
-
-  faqItems.forEach((item, index) => {
-    const questionEl = item.querySelector('.faq-question');
-    const iconEl     = item.querySelector('.faq-icon');
-    if (!questionEl || !iconEl) return;        // <- null guard
-
-    /* -- build header -- */
-    const headerWrapper = document.createElement('div');
-    headerWrapper.classList.add('faq-header');
-    headerWrapper.appendChild(questionEl);
-    headerWrapper.appendChild(iconEl);
-
-    /* -- build answer -- */
-    const answerWrapper = document.createElement('div');
-    answerWrapper.classList.add('faq-answer');
-
-    const answerText = document.createElement('p');
-    answerText.textContent = dummyAnswers[index] || dummyAnswers[0];
-    answerWrapper.appendChild(answerText);
-
-    /* -- reassemble -- */
-    item.innerHTML = '';
-    item.appendChild(headerWrapper);
-    item.appendChild(answerWrapper);
-
-    /* -- toggle behaviour -- */
-    headerWrapper.addEventListener('click', () => {
-      /* close other open rows */
-      faqItems.forEach(otherItem => {
-        if (otherItem !== item && otherItem.classList.contains('is-open')) {
-          otherItem.classList.remove('is-open');
-          const otherAnswer = otherItem.querySelector('.faq-answer');
-          if (otherAnswer) otherAnswer.style.maxHeight = null;
-        }
-      });
-
-      /* toggle current row */
-      const isOpen = item.classList.toggle('is-open');
-      answerWrapper.style.maxHeight = isOpen
-        ? answerWrapper.scrollHeight + 'px'
-        : null;
-    });
-  });
 });
 
 /* ============================================================
@@ -480,3 +424,34 @@ $(function () {
 
             document.querySelectorAll(".impact-card").forEach(card => observer.observe(card));
         });
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach((item) => {
+        const header = item.querySelector('.faq-header');
+        const answer = item.querySelector('.faq-answer');
+
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+
+            // Close all open items (One by one open)
+            faqItems.forEach((otherItem) => {
+                otherItem.classList.remove('active');
+                const otherHeader = otherItem.querySelector('.faq-header');
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                
+                if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+                if (otherAnswer) otherAnswer.style.maxHeight = null;
+            });
+
+            // If clicked item was not active before, open it
+            if (!isActive) {
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+});

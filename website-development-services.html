@@ -32,31 +32,41 @@
     </div>
 
     <!-- Main Navigation Bar -->
-    <nav class="navbar">
+   <nav class="navbar">
+  <!-- Logo -->
+  <a href="index.html" class="logo">
+    <img src="images/website_logo.svg" alt="logo" width="80">
+  </a>
 
-            <!-- Using stylized text/placeholder for logo graphic matching image -->
-          <a href="index.html"><img src="images/website_logo.svg" alt="logo" width="60px"></a> 
+  <!-- Hamburger (mobile only) -->
+  <button class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+    <i class="fa-solid fa-bars"></i>
+  </button>
 
-    
+  <!-- Dark overlay -->
+  <div class="nav-overlay" id="nav-overlay"></div>
 
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+  <!-- Sidebar / Nav links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="about-us.html">About Us</a></li>
+    <li><a href="website-development-services.html">Website Development</a></li>
+    <li><a href="#">WordPress Development</a></li>
+    <li><a href="#">E-Commerce Development</a></li>
+    <li><a href="#">SEO</a></li>
+    <li><a href="#">Portfolio</a></li>
+    <li><a href="#">Our Products</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
 
-        <ul class="nav-links" id="nav-links">
-            <li><a href="about-us.html" >About Us</a></li>
-            <li><a href="website-development-services.html" class="active" >Website Development</a></li>
-            <li><a href="#">WordPress Development</a></li>
-            <li><a href="#">E-Commerce Development</a></li>
-            <li><a href="#">SEO</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Our Products</a></li>
-            <li><a href="#">Contact US</a></li>
-        </ul>
-    </nav>
+  <!-- Close button (mobile only, shown when panel is open) -->
+  <button class="close-menu" id="close-menu" aria-label="Close menu">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+</nav>
+
 
     <!-- Hero Section -->
-   <section class="bgabout">
+   <section class="bgaboutweb">
 <h1>Website Development</h1>
     </section>
     <!-- Accent Gradient Line -->
@@ -515,55 +525,130 @@
         </div>
     </div>
 </div>
+<div class="faq-container pt-0 mt-16" data-aos="fade-up"
+    data-aos-offset="10"
+    data-aos-delay="80"
+    data-aos-duration="1000"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-center">
+    
+    <h2 class="faq-heading">FAQs</h2>
+    <p class="faq-subheading">Frequently Asked Questions About A1 Web Builder</p>
 
-<div class="faq-container pt-0 mt-16">
-        <h2 class="faq-heading">FAQs</h2>
-        <p class="faq-subheading">Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+    <div class="faq-grid">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">1. What services does A1 Web Builder offer?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>We offer website design, web development, SEO optimization, eCommerce solutions, and digital marketing services.</p>
+            </div>
+        </div>
 
-        <div class="faq-grid">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">2. Where is A1 Web Builder located?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>A1 Web Builder operates globally, serving clients with custom digital solutions tailored to their needs.</p>
             </div>
-            <!-- FAQ Item 2 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">3. Does A1 Web Builder provide website design and development services?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, we specialize in both custom web design and end-to-end website development.</p>
             </div>
-            <!-- FAQ Item 3 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">4. Does A1 Web Builder develop WordPress and eCommerce websites?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, we create high-converting WordPress websites and fully functional eCommerce platforms like WooCommerce and Shopify.</p>
             </div>
-            <!-- FAQ Item 4 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">5. What SEO services does A1 Web Builder provide?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>We provide technical SEO, on-page optimization, content creation, link building, and local SEO services.</p>
             </div>
-            <!-- FAQ Item 5 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">6. Can A1 Web Builder help my business rank higher on Google?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Absolutly! Our data-driven SEO strategies target competitive keywords to drive organic traffic and boost rankings.</p>
             </div>
-            <!-- FAQ Item 6 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 7 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">7. Does A1 Web Builder offer Google Ads and social media marketing?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, we manage paid ad campaigns across Google Ads, Meta (Facebook/Instagram), and LinkedIn to maximize ROI.</p>
             </div>
-            <!-- FAQ Item 7 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 8 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">8. How much does website development or SEO cost?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Pricing varies based on your project requirements. Contact us for a free quote tailored to your business needs.</p>
             </div>
-            <!-- FAQ Item 8 -->
-            <div class="faq-item">
-                <span class="faq-question">Lorem Ipsum is simply dummy text of the printing and typesetting</span>
+        </div>
+
+        <!-- FAQ Item 9 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">9. Can A1 Web Builder help my business appear in ChatGPT and Gemini search results?</span>
                 <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, we optimize your site for Generative Engine Optimization (GEO) so your brand is cited by AI search engines.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 10 -->
+        <div class="faq-item">
+            <button class="faq-header" type="button" aria-expanded="false">
+                <span class="faq-question">10. How can I get started with A1 Web Builder?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Simply reach out via our contact page or book a free consultation call to discuss your goals.</p>
             </div>
         </div>
     </div>
-
+</div>
 <footer class="pt-16 mt-16">
         <div class="footer-top ">
             <!-- Brand & Description -->
@@ -634,251 +719,87 @@
         <!-- Bottom decorative shade bar -->
         <div class="footer-bottom-bar"></div>
     </footer>
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Form submitted successfully!');
-            // Add custom form submission logic here (e.g., fetch API)
+    <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    
+(function () {
+  const toggle   = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+  const overlay  = document.getElementById('nav-overlay');
+  const closeBtn = document.getElementById('close-menu');
+
+  function openMenu() {
+    navLinks.classList.add('active');
+    overlay.classList.add('active');
+    closeBtn.classList.add('active');
+    document.body.classList.add('no-scroll');
+    toggle.setAttribute('aria-expanded', 'true');
+    closeBtn.focus();
+  }
+
+  function closeMenu() {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
+    closeBtn.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // Open / close with hamburger
+  toggle.addEventListener('click', () => {
+    navLinks.classList.contains('active') ? closeMenu() : openMenu();
+  });
+
+  // ✅ Overlay click closes the menu
+  overlay.addEventListener('click', closeMenu);
+
+  // Close button
+  closeBtn.addEventListener('click', closeMenu);
+
+  // Close when a nav link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  // Reset state when resizing to desktop
+  window.matchMedia('(max-width: 992px)').addEventListener('change', (e) => {
+    if (!e.matches) closeMenu();
+  });
+})();
+
+  AOS.init();
+
+      if (typeof tailwind !== 'undefined') {
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deepPurple:    '#5925a1',
+          brandPurple:   '#4c1d95',
+          brandRed:      '#f33d25',
+          cardBorder:    '#d4b7e8',
+          processBg:     '#000',
+          processOrange: '#f24233',
+          processDark:   '#222222'
         }
-		// Optional enhancement: Add dynamic interactions or simple card entry animations
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".story-card");
+      }
+    }
+  };
+}
 
-    // Example subtle interaction logging or intersection observer trigger
-    cards.forEach((card, index) => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = `all 0.5s ease ${index * 0.15}s`;
+</script>
 
-        setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, 100);
-    });
-});
-
-/**
- * Interactive enhancement: Adds subtle hover logging 
- * and responsive interaction handlers for the feature cards.
- */
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.feature-card');
-
-    cards.forEach((card) => {
-        card.addEventListener('mouseenter', () => {
-            const title = card.querySelector('h3').textContent.replace(/\s+/g, ' ');
-            console.log(`Focused feature: ${title}`);
-        });
-    });
-});
-    </script>
-    <script>
-        // JavaScript for filtering portfolio items based on active button
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                button.classList.add('active');
-
-                const filterValue = button.getAttribute('data-filter');
-
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
-    <script>
-        // JavaScript to handle toggle effect on click (rotates plus to an 'x' shape)
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            item.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab-item');
-    const contentText = document.getElementById('tabContent');
-
-    // Unique content entries for each of the 9 tabs
-    const descriptions = [
-        "Your website is like the face of your brand. With consistent design, clear messaging, and the right tone, it helps people remember you and trust your business. We help solidify your brand and make business identity in the digital world to reach your potential customers.",
-        "A website ensures your business is accessible 24 hours a day, 7 days a week, allowing potential clients to find information, make inquiries, or purchase products even outside of standard working hours.",
-        "A professional online presence builds immediate authority and credibility. Customers naturally trust businesses that maintain a polished, user-friendly, and informative official web portal.",
-        "Compared to traditional advertising methods like print or television, digital marketing paired with a solid website offers a much higher return on investment and broader reach at a fraction of the cost.",
-        "Your physical location no longer limits your customer base. A properly structured and optimized website opens doors to national and international markets instantly.",
-        "Interactive tools, contact forms, live chats, and straightforward navigation improve user engagement, turning casual visitors into active brand participants.",
-        "An organized digital showcase lets you present your entire inventory of goods and services clearly, complete with high-resolution imagery, pricing, and descriptions.",
-        "Analytics tools integrated into your website provide valuable user insights, tracking behavior metrics that help refine your marketing strategies and business decisions.",
-        "A cohesive digital platform unifies your brand messaging, combining colors, logos, and mission statements to create a lasting and distinctive identity in the market."
-    ];
-
-    tabs.forEach((tab) => {
-        tab.addEventListener('click', () => {
-            // Remove active class from all tabs
-            tabs.forEach(t => t.classList.remove('active'));
-            
-            // Add active class to clicked tab
-            tab.classList.add('active');
-
-            // Update content based on data index
-            const index = tab.getAttribute('data-index');
-            contentText.textContent = descriptions[index];
-        });
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.website-card');
-
-    cards.forEach((card, index) => {
-        card.addEventListener('mouseenter', () => {
-            // Optional visual feedback logic on hover
-            const num = card.querySelector('.card-num').textContent;
-            console.log(`Hovered on card #${num}`);
-        });
-    });
-});
-    </script>
-    <script>
-        // Interactive JavaScript for Accordions and Industry filters
-        document.addEventListener('DOMContentLoaded', () => {
-            const industryButtons = document.querySelectorAll('.industry-btn');
-            industryButtons.forEach((btn, index) => {
-                btn.addEventListener('click', () => {
-                    console.log(`Selected Industry: ${btn.textContent}`);
-                });
-            });
-
-            const accordions = document.querySelectorAll('.accordion-bar');
-            accordions.forEach(bar => {
-                bar.addEventListener('click', () => {
-                    const icon = bar.querySelector('.accordion-icon');
-                    if (icon.textContent === '+') {
-                        icon.textContent = '−';
-                        icon.style.transform = 'rotate(180deg)';
-                    } else {
-                        icon.textContent = '+';
-                        icon.style.transform = 'rotate(0deg)';
-                    }
-                });
-            });
-        });
-    </script>
-
-    <script>
-        // Interactive JavaScript handler
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.impact-card');
-            
-            cards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    console.log(`Impact achievement card ${index + 1} clicked.`);
-                });
-            });
-        });
-    </script>
-
-
-    <script>
-        // Interactive JavaScript handlers for tab filters or clicks
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', (e) => {
-                    filterButtons.forEach(btn => btn.style.opacity = '1');
-                    e.target.style.opacity = '0.7';
-                    console.log(`Filtered by category: ${e.target.textContent}`);
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const processCards = document.querySelectorAll('.process-card');
-            processCards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    console.log(`Process card ${index + 1} clicked.`);
-                });
-            });
-        });
-    </script>
-    <script>
-        // JavaScript Enhancement: Interactive logging / dynamic adjustments
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.logo-card');
-            
-            cards.forEach((card, index) => {
-                card.addEventListener('click', () => {
-                    console.log(`Logo card ${index + 1} clicked.`);
-                });
-            });
-        });
-    </script>
-    <!-- JavaScript for Mobile Menu Toggle -->
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-      <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        deepPurple: '#5925a1',
-                        brandPurple: '#4c1d95',
-                        brandRed: '#f33d25',
-                        cardBorder: '#d4b7e8',
-                           processBg: '#53298c',
-                        processOrange: '#f24233',
-                        processDark: '#222222',
-                    }
-                }
-            }
-        }
-
-        /**
- * Interactive enhancement: Adds a subtle mouse-move tilt/parallax 
- * effect to elevate the visual card presentation dynamically.
- */
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // x position within card
-            const y = e.clientY - rect.top;  // y position within card
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = ((y - centerY) / centerY) * -5; // Max 5 deg tilt
-            const rotateY = ((x - centerX) / centerX) * 5;
-
-            card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0px) rotateX(0deg) rotateY(0deg)';
-        });
-    });
-});
-    </script>
 </body>
 </html>
